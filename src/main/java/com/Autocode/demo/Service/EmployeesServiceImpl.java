@@ -25,12 +25,15 @@ public class EmployeesServiceImpl implements EmployeesService{
     public Employees modifier(Long id, Employees employees) {
         return employeesReposetory.findById(id)
                 .map(p->{
-                    return employeesReposetory.save(p)
-                })
+                    p.setName(employees.getName());
+                    p.setTask(employees.getTask());
+                    return employeesReposetory.save(p);
+                }).orElseThrow(() ->new RuntimeException("Employe non trouvé"));
     }
 
     @Override
     public String Supprimer(Long id) {
-        return "";
+        employeesReposetory.deleteById(id);
+        return "Produit supprimer";
     }
 }
