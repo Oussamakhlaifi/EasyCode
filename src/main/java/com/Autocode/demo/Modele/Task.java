@@ -8,14 +8,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Employees")
+@Table(name ="Task")
 @Data
-public class Employees {
+public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id ;
-    private String name ;
-    @ManyToOne
-    @JoinColumn(name = "id_task")
-    private Task task ;
+    private Long id;
+    private String name;
+    private String evolution;
 }
