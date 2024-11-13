@@ -28,4 +28,8 @@ public class EmployeesController {
 public String delete(@PathVariable Long id){
     return employeesService.Supprimer(id);
 }
+@GetMapping("/{employees/task")
+    public Employees getEmployeeWithTask(@PathVariable Long employeeId){
+    return employeesService.getEmployeeWithTask(employeeId);
+}
 }

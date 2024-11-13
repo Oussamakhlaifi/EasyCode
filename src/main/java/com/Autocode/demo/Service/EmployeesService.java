@@ -12,4 +12,6 @@ public interface EmployeesService {
     Employees modifier(Long id ,Employees employees);
 
     String Supprimer(Long id);
+
+    Employees getEmployeeWithTask(Long employeeId);
 }

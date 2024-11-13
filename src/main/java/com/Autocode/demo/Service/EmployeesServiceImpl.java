@@ -36,4 +36,9 @@ public class EmployeesServiceImpl implements EmployeesService{
         employeesReposetory.deleteById(id);
         return "Produit supprimer";
     }
+
+    public Employees getEmployeeWithTask(Long employeeId){
+        return employeesReposetory.findEmployeeWithTask(employeeId);
+
+    }
 }
